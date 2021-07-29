@@ -1,3 +1,60 @@
 body{
-    background-color:coral;
+    background-image: url(/img/bg_web.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.main{
+    background-color: chartreuse;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: inline-block;
+    width: 800vh;
+    height: 600vh;
+}
+
+
+.bg_cabecera {
+    height: 200px;
+    background-image: url(/img/bg_titular3.jpg);
+    background-repeat: no-repeat;
+    background-size:auto;
+    border-radius: 15px;
+    margin: 1px;
+    
+
+    /*background: #7CCEB2;
+    background: -moz-linear-gradient(top, #7CCEB2 0%, #439FA4 96%, #285E61 100%);
+    background: -webkit-linear-gradient(top, #7CCEB2 0%, #439FA4 96%, #285E61 100%);
+    background: linear-gradient(to bottom, #7CCEB2 0%, #439FA4 96%, #285E61 100%);*/
+
+    }
+.bg_cabecera h4{
+    font-family: 'Impact', Tahoma, sans-serif;
+    font-size: 200%;
+    color: rgb(255, 255, 255);
+    letter-spacing: 2px;
+    font-weight: 700; 
+    text-decoration: none;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: none;
+    word-spacing: 2px;
+    padding-left: 20px;
+    padding-top: 30px;
+    
+}
+
+.footer {
+    background: #494949;
+    background: -moz-linear-gradient(top, #494949 0%, #2e2e2e 96%, #131313 100%);
+    background: -webkit-linear-gradient(top, #494949 0%, #2e2e2e 96%, #131313 100%);
+    background: linear-gradient(to bottom, #494949 0%, #2e2e2e 96%, #131313 100%);
+    height: 40px;
+}
+.footer p {
+    color: #808080;
+    font-size: 15px;
+    text-align: center;
 }

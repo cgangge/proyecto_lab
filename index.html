@@ -4,26 +4,113 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba2</title>
+    <title>Hola Mundo!.. todo sobre la NASA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/estilo.css">
+   <!-- <script src="js/script.js"></script>-->
+    
     <!--Integrantes: Rodriguez, Juan Manuel y Gangge Cristian-->
-</head>
-<body class="bg-secondary">
-    <div class="container shadow-sm p-3 mb-5 bg-body rounded">
-        
-        <h1><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-laughing" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-            <path d="M12.331 9.5a1 1 0 0 1 0 1A4.998 4.998 0 0 1 8 13a4.998 4.998 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5zM7 6.5c0 .828-.448 0-1 0s-1 .828-1 0S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 0-1 0s-1 .828-1 0S9.448 5 10 5s1 .672 1 1.5z"/>
-          </svg>
-          Bienvenidos!</h1>
 
+</head>
+<body>
+    <div class="container shadow-sm p-3 mb-5 bg-body rounded">
+   <header>
+       <div class="bg_cabecera">
+           <h4>Hola Mundo!!</h4>
+        </div>
+
+   </header>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <!--<a class="navbar-brand" href="#">Navbar scroll</a>-->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <button class="btn btn-secondary btn-sm" type="button">
+            <a class="nav-link active" href="#">Home</a>
+          </button>
+        
+                  
+          <!--<li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Link</a>
+          </li>-->
+        </ul>
+      
+      </div>
     </div>
+  </nav>
+
+   <section>
+    
+
+
+   </section>
+   <article>
+
+    <div class="row ">
+      <div class="col"> <div class="card" style="width: 18rem;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/140px-NASA_logo.svg.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Qué es la Nasa</h5>
+        <p class="card-text">La Administración Nacional de Aeronáutica y el Espacio, más conocida como NASA (por sus siglas en inglés, National Aeronautics and Space Administration), es la agencia del gobierno estadounidense responsable del programa espacial civil, así como de la investigación aeronáutica y aeroespacial.
+
+      </p>
+        <a href="https://es.wikipedia.org/wiki/NASA" class="btn btn-primary" target="_black" >ver más en Wiki</a>
+      </div>
+    </div>
+  </div>
+
+
+<div class="col-9">
+      <button id="buscar" class="btn btn-primary justify-content-center" style="margin-top: 50px;" type="button">Ver la imagen del día</button>
+      <div class="col-9" id="contenido"></div>
+
+      </div>
+
+
+  </div>
    
 
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+
+   </article>
+   <footer class="footer">
+       <p>Integrantes: Rodriguez, Juan Manuel - Gangge, Cristian</p> 
+
+   </footer>
+
+    </div>
+
+
+  <script>
+      let botonBuscar = document.querySelector("#buscar")
+      
+      botonBuscar.addEventListener("click",()=>{
+          console.log("boton presionado")
+          sendApiRequest()
+      })
+  async function sendApiRequest(){
+          let API_KEY = "22jq3t1z8wVLBE971dtvuB3T0PYOTwzt8tMaGJnr"
+          let response = await fetch('https://api.nasa.gov/planetary/apod?api_key=22jq3t1z8wVLBE971dtvuB3T0PYOTwzt8tMaGJnr');
+          console.log(response)
+          let data = await response.json()
+          console.log(data)
+          useApiData(data)
+      }
+      function useApiData(data){
+        
+        document.querySelector("#contenido").innerHTML += data.explanation
+        document.querySelector("#contenido").innerHTML += "<img src='"+data.url+"'style='whidth:50%;'/>";
+    }
+    </script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
