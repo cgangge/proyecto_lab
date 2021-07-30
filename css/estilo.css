@@ -4,17 +4,6 @@ body{
     background-size:cover;
 }
 
-.main{
-    background-color: chartreuse;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: auto;
-    display: inline-block;
-    width: 800vh;
-    height: 600vh;
-}
-
-
 .bg_cabecera {
     height: 200px;
     background-image: url(../img/bg_titular3.jpg);
