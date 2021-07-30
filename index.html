@@ -13,7 +13,7 @@
 
 </head>
 <body>
-    <div class="container shadow-sm p-3 mb-5 bg-body rounded">
+  <div class="container shadow-sm p-3 mb-5 bg-body rounded">
    <header>
        <div class="bg_cabecera">
            <h4>Hola Mundo!!</h4>
@@ -31,57 +31,37 @@
           <button class="btn btn-secondary btn-sm" type="button">
             <a class="nav-link active" href="#">Home</a>
           </button>
-        
-                  
-         
         </ul>
-      
       </div>
     </div>
-  </nav>
+   </nav>
 
-   <section>
-    
-
-
-   </section>
    <article>
 
     <div class="row ">
-      <div class="col"> <div class="card" style="width: 18rem;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/140px-NASA_logo.svg.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Qué es la Nasa</h5>
-        <p class="card-text">La Administración Nacional de Aeronáutica y el Espacio, más conocida como NASA (por sus siglas en inglés, National Aeronautics and Space Administration), es la agencia del gobierno estadounidense responsable del programa espacial civil, así como de la investigación aeronáutica y aeroespacial.
-
-      </p>
-        <a href="https://es.wikipedia.org/wiki/NASA" class="btn btn-primary" target="_black" >ver más en Wiki</a>
-      </div>
+        <div class="col"> <div class="card" style="width: 18rem;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/140px-NASA_logo.svg.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Qué es la Nasa</h5>
+              <p class="card-text">La Administración Nacional de Aeronáutica y el Espacio, más conocida como NASA (por sus siglas en inglés, National Aeronautics and Space Administration), es la agencia del gobierno estadounidense responsable del programa espacial civil, así como de la investigación aeronáutica y aeroespacial.
+              </p>
+              <a href="https://es.wikipedia.org/wiki/NASA" class="btn btn-primary" target="_black" >ver más en Wiki</a>
+            </div>
+        </div>
     </div>
-  </div>
 
-
-<div class="col-9">
+   <div class="col-9">
       <button id="buscar" class="btn btn-primary justify-content-center" style="margin-top: 50px;" type="button">Ver la imagen del día</button>
-      <div class="col-9" id="contenido"></div>
+        <div class="col-9" id="contenido"></div>
 
-      </div>
-
-
-  </div>
-   
-
-</div>
-
-
-
-   </article>
+        </div>
+    </div>
+    </div>
+  </article>
    <footer class="footer">
        <p>Integrantes: Rodriguez, Juan Manuel - Gangge, Cristian</p> 
-
    </footer>
-
-    </div>
+   </div>
 
 
   <script>
@@ -91,7 +71,7 @@
           console.log("boton presionado")
           sendApiRequest()
       })
-  async function sendApiRequest(){
+      async function sendApiRequest(){
           let API_KEY = "22jq3t1z8wVLBE971dtvuB3T0PYOTwzt8tMaGJnr"
           let response = await fetch('https://api.nasa.gov/planetary/apod?api_key=22jq3t1z8wVLBE971dtvuB3T0PYOTwzt8tMaGJnr');
           console.log(response)
@@ -104,7 +84,7 @@
         document.querySelector("#contenido").innerHTML += data.explanation
         document.querySelector("#contenido").innerHTML += "<img src='"+data.url+"'class='img-fluid''/>";
     }
-    </script>
+  </script>
 
 
 
